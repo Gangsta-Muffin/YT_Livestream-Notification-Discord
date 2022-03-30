@@ -80,7 +80,7 @@ class Live(commands.Cog):
         else:
             await self.channel.set_permissions(role, send_messages=True)
 
-    @tasks.loop(seconds=5)
+    @tasks.loop(minutes=15)
     async def check_live(self):
         live_state = self.is_live
         is_live = live_state[0]
