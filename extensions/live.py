@@ -65,8 +65,8 @@ class Live(commands.Cog):
         return [is_live, vid_id]
 
 
-    async def send_message(self, message):
-        await self.announce_channel.send(f"A new stream has started! {message}")
+    async def send_message(self, link):
+        await self.announce_channel.send(f"A new stream has started! {link}")
 
 
     async def edit_perm(self):
@@ -83,7 +83,6 @@ class Live(commands.Cog):
     @tasks.loop(seconds=5)
     async def check_live(self):
         live_state = self.is_live
-        print(live_state)
         is_live = live_state[0]
         live_link = live_state[1]
 
