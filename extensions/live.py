@@ -1,5 +1,4 @@
-from imp import lock_held
-from discord import TextChannel
+from nextcord import TextChannel
 from nextcord.ext import commands, tasks
 from nextcord import Embed, Guild, PermissionOverwrite, utils
 from googleapiclient.discovery import build
