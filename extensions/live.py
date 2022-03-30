@@ -66,7 +66,7 @@ class Live(commands.Cog):
 
 
     async def send_message(self, link):
-        await self.announce_channel.send(f"A new stream has started! {link}")
+        await self.announce_channel.send(f"@everyone A new stream has started! {link}")
 
 
     async def edit_perm(self):
