@@ -10,7 +10,7 @@ class Live(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-        self._key = "AIzaSyAhV0rPsAaI7NK3SbWXseah7_c2kqz0InM"
+        self._key = "API KEY HERE"
         self.yt = build("youtube", "v3", developerKey=self.key)
 
         self.keep_close = False
@@ -25,15 +25,19 @@ class Live(commands.Cog):
 
     @property
     def channel(self):
-        return self.bot.get_channel(913507302651330581)
+        return self.bot.get_channel("CHANNEL ID HERE")
+
+    @property
+    def announce_channel(self):
+        return self.bot.get_channel("ANNOUNCEMENT CHANNEL ID HERE")
     
     @property
     def guild(self):
-        return self.bot.get_guild(852600631994220585)
+        return self.bot.get_guild("GUILD ID HERE")
 
     @property
     def role_id(self):
-        return 915330052495933471
+        return "ROLE ID HERE"
 
     @property
     def channel_state(self):
@@ -46,24 +50,23 @@ class Live(commands.Cog):
             part="snippet",
             eventType = "live",
             type = "video",
-            # channelId = "UCSJ4gkVC6NrvII8umztf0Ow"
-            channelId = "UCa10nxShhzNrCE1o2ZOPztg"
-            # channelId="UCNRD06rR7bR0Xwd-7gAKDEA"
+            channelId = "YOUTUBE CHANNEL ID HERE"
         )
 
         response = request.execute()
         is_live = response['pageInfo']['totalResults']
+        
+        try:
+            vid_id = response['items'][0]['id']['videoId']
 
-        return is_live
-
-    async def stop_force(self):
-        self.keep_close = False
+        except:
+            vid_id = 0
+        
+        return [is_live, vid_id]
 
 
     async def send_message(self, message):
-        send_message = Embed(title="New Embed", description=message)
-
-        await self.channel.send(embed=send_message)
+        await self.announce_channel.send(f"A new stream has started! {message}")
 
 
     async def edit_perm(self):
@@ -79,19 +82,22 @@ class Live(commands.Cog):
 
     @tasks.loop(seconds=5)
     async def check_live(self):
-        live = self.live
-        # live = self.is_live
+        live_state = self.is_live
+        print(live_state)
+        is_live = live_state[0]
+        live_link = live_state[1]
+
         channel_state = self.channel_state
         force_lock = self.keep_close
 
-        if live and not channel_state and not force_lock:
+        if is_live and not channel_state and not force_lock:
             await self.edit_perm()
-            print(f"Keep locked was is set to {force_lock}")
+            await self.send_message(f"https://www.youtube.com/watch?v={live_link}")
 
-        elif not live and channel_state:
+        elif not is_live and channel_state:
             await self.edit_perm()
             
-        elif not live and not channel_state and force_lock:
+        elif not is_live and not channel_state and force_lock:
             self.keep_close = False
 
 
@@ -125,15 +131,6 @@ class Live(commands.Cog):
             self.keep_close = False
 
             await self.channel.set_permissions(role, send_messages=True)
-
-
-    @commands.command(name="live")
-    async def set_live(self, ctx):
-        if self.live:
-            self.live = False
-
-        else:
-            self.live = True
 
 
 
