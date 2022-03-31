@@ -80,7 +80,7 @@ for example:
 
 Now you are just about finished. The last thing you need to do is input the bot token in the main.py file:
 ```python
-bot.run("GJK4FA565SD54E6.FDA445A-FD7891
+bot.run("GJK4FA565SD54E6.FDA445A-FD7891")
 ```
 
 
