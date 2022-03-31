@@ -23,4 +23,34 @@ This version of the code is set up to be available for all users. Due to YouTube
 
 <h2>Setup</h2>
 
-To set the code up properly, you will need to retrieve the id for your discord announcement channel. To do so, make sure you have `Developer Mode` enabled within the `Advanced` category in the settings. From here on out you can right click any channel or guild and select `Copy ID` to get the id of that object. 
+To set the code up properly, you will need to retrieve the id for your discord announcement channel. To do so, make sure you have `Developer Mode` enabled within the `Advanced` category in the discord user settings. From here on out you can right click any channel or guild and select `Copy ID` to get the id of that object. 
+
+
+from here on out you are ready to paste the IDs into the code (live.py file):
+  ```python
+    @property
+    def announce_channel(self):
+        return self.bot.get_channel("ANNOUNCEMENT CHANNEL ID HERE")
+    
+    @property
+    def guild(self):
+        return self.bot.get_guild("GUILD ID HERE")
+
+    @property
+    def role_id(self):
+        return "ROLE ID HERE"
+  ```
+  
+  simply replace the string with the integer of the given value.
+
+for example:
+```python
+    @property
+    def channel(self):
+        return self.bot.get_channel(2938708375455738419)
+```
+  
+  lastly, you will need to add your YouTube Data API key to the file:
+```python
+    self._key = "GASJE456EW45S-FDAS4"
+```
