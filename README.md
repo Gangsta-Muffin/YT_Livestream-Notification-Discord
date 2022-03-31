@@ -18,4 +18,9 @@ Now you have installed all necessary libraries and software, it will be necessar
 - Get your own Youtube API key <a href="https://console.cloud.google.com/apis/dashboard">here</a>
 
 <h3>NOTICE</h3>
-This version of the code is set up to be available for all users. Due to YouTube Data API's limitations, you can only request this data (`search()` live.py; line 48) 100 times per day (1 request = 100 units, quote = 10.000 units/day). If you wish to recieve a higher quote, you can contact YouTube Data API <a href="">here</a>
+This version of the code is set up to be available for all users. Due to YouTube Data API's limitations, you can only request this data (`search()` live.py; line 48) 100 times per day (1 request = 100 units, quote = 10.000 units/day). If you wish to recieve a higher quote, you can contact YouTube Data API <a href="https://support.google.com/youtube/contact/yt_api_form">here</a>. Please note that applying for a higher quote doesn't guarantee that you will recieve it!
+
+
+<h2>Setup</h2>
+
+To set the code up properly, you will need to retrieve the id for your discord announcement channel. To do so, make sure you have `Developer Mode` enabled within the `Advanced` category in the settings. From here on out you can right click any channel or guild and select `Copy ID` to get the id of that object. 
