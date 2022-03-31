@@ -1,6 +1,6 @@
 <h1>Youtube - Discord notifications</h1>
 
-The Youtube Livestream notification is a notification system built to announce YouTube Livestreams (of the youtuber of your choice) to your Discord server! The original idea behind this code was to create a system for Zen World's music feedback streams. As it stands today, he uses a discord channel as a "feedback request" channel. The main issue within the server was, that people would send their music in (for feedback) before the stream started. This was supposed to fix that issue
+The Youtube Livestream notification is a notification system built to announce YouTube Livestreams (of the youtuber of your choice) to your Discord server! The original idea behind this code was to create a system for Zen World's music feedback streams in which a channel opens up (for people to send their music links in) whenever Zen World goes live (and then closes when he stops the stream)
 
 
 <h3>Installation</h2>
