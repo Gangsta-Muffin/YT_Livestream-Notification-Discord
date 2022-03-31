@@ -21,4 +21,4 @@ for file in os.listdir("./extensions"):
 
 
 
-bot.run("OTU3MDMzMDIxMzMxMDk5Njc4.Yj44dQ.p1Dp0Ut1v5Px4Jg-dZf7-e_HaOk")
+bot.run("YOUR BOT TOKEN HERE")
