@@ -37,7 +37,6 @@ class Live(commands.Cog):
         
         try:
             vid_id = response['items'][0]['id']['videoId']
-
         except:
             vid_id = 0
         
@@ -65,7 +64,7 @@ class Live(commands.Cog):
 
 
     @check_live.before_loop
-    async def before_live(self):
+    async def before_check_live(self):
         await self.bot.wait_until_ready()
        
         
