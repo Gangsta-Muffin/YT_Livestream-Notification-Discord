@@ -50,7 +50,38 @@ for example:
         return self.bot.get_channel(2938708375455738419)
 ```
   
-  lastly, you will need to add your YouTube Data API key to the file:
+  Next, you will need to add your YouTube Data API key to the file aswell as define the Youtuber ID you wish the bot to follow:
 ```python
     self._key = "GASJE456EW45S-FDAS4"
+    
+    
+    
+    @property
+    def is_live(self):
+        request = self.yt.search().list(
+            part="snippet",
+            eventType = "live",
+            type = "video",
+            channelId = "FD4A45E"
+        )
+
+        response = request.execute()
+        is_live = response['pageInfo']['totalResults']
+        
+        try:
+            vid_id = response['items'][0]['id']['videoId']
+
+        except:
+            vid_id = 0
+        
+        return [is_live, vid_id]
+    
 ```
+
+Now you are just about finished. The last thing you need to do is input the bot token in the main.py file:
+```python
+bot.run("GJK4FA565SD54E6.FDA445A-FD7891
+```
+
+
+
