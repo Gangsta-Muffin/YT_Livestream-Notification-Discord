@@ -84,5 +84,6 @@ Given the bot's simplicity, there is not much need for command implementation. O
 
 
 <h2>Results</h2>
-![Example](https://user-images.githubusercontent.com/94480512/161152190-9f9106cb-0f4d-43bf-a0f3-8074902e7f70.png)
 
+
+![](https://user-images.githubusercontent.com/94480512/161152438-a5709424-47ce-4bb4-8595-ed647ed19811.png)
