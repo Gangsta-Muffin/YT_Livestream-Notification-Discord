@@ -19,6 +19,4 @@ for file in os.listdir("./extensions"):
         bot.load_extension(f"extensions.{file[:-3]}")
  
 
-
-
 bot.run("YOUR BOT TOKEN HERE")
