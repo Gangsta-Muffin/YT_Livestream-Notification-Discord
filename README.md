@@ -16,3 +16,6 @@ Now you have installed all necessary libraries and software, it will be necessar
 
 - Create a discord bot account <a href="https://discord.com/developers/docs/intro">here</a>
 - Get your own Youtube API key <a href="https://console.cloud.google.com/apis/dashboard">here</a>
+
+<h3>NOTICE</h3>
+This version of the code is set up to be available for all users. Due to YouTube Data API's limitations, you can only request this data (`search()` live.py; line 48) 100 times per day (1 request = 100 units, quote = 10.000 units/day). If you wish to recieve a higher quote, you can contact YouTube Data API <a href="">here</a>
