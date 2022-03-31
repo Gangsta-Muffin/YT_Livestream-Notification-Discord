@@ -80,3 +80,9 @@ bot.run("GJK4FA565SD54E6.FDA445A-FD7891")
 
 <h2>Usage</h2>
 Given the bot's simplicity, there is not much need for command implementation. Once you have followed the Stept provided in the Setup section, the bot is all ready to go. Just run the main.py file and the bot will be up and will begin checking for Livestreams! (beware that server implementation is not included in this code)
+
+
+
+<h2>Results</h2>
+![Example](https://user-images.githubusercontent.com/94480512/161152190-9f9106cb-0f4d-43bf-a0f3-8074902e7f70.png)
+
